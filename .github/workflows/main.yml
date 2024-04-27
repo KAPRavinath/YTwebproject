@@ -19,4 +19,4 @@ jobs:
         ssh-private-key: ${{ secrets.SECRETKAPR }}
       
     - name: Deploy via SSH
-      run: scp -r . ubuntu@18.185.47.82:/www/wwwroot/kapravinath.run.place
+      run: scp -o StrictHostKeyChecking=no -r ./*  root@18.185.47.82:/www/wwwroot/kapravinath.run.place
