@@ -1,0 +1,22 @@
+name: SSH Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SECRETKAPR }}
+      
+    - name: Deploy via SSH
+      run: scp -r . ubuntu@18.185.47.82:/www/wwwroot/kapravinath.run.place
