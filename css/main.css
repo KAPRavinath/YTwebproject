@@ -1,127 +1,27 @@
-/* Reset default browser styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f8f9fa;
+  font-family: 'Helvetica', sans-serif;
 }
 
-/* Header styles */
-header {
-  background-color: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo img {
-  height: 30px;
-}
-
-.search-bar input[type="text"] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 300px;
-}
-
-.search-bar button {
-  padding: 8px 16px;
-  background-color: #ff6a00;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.user-options a {
-  text-decoration: none;
-  color: #333;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-nav ul li {
-  margin: 0 10px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #ff6a00;
-}
-
-/* Container styles */
 .container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
+  margin-top: 50px;
 }
 
-/* Product card styles */
-.product {
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
+h1 {
+  color: #343a40;
 }
 
-.product img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 10px;
+.form-group label {
+  font-weight: bold;
 }
 
-.product h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
-.product p {
-  margin-bottom: 5px;
-}
-
-.product button {
-  padding: 8px 16px;
-  background-color: #ff6a00;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.product button:hover {
-  background-color: #e66000;
-}
-
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
 }
 
