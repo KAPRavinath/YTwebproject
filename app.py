@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, session, redirect, url_for
 from werkzeug.utils import secure_filename
 from reportlab.pdfgen import canvas
 from PIL import Image
 import os
 
 app = Flask(__name__)
+app.secret_key = 'supersecretkey'  # Required for session handling
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['OUTPUT_FOLDER'] = 'outputs'
 
@@ -32,7 +33,22 @@ def upload_files():
     output_pdf_path = os.path.join(app.config['OUTPUT_FOLDER'], output_pdf_name + '.pdf')
     convert_images_to_pdf(image_paths, output_pdf_path)
 
-    return send_file(output_pdf_path, as_attachment=True)
+    session['output_pdf_path'] = output_pdf_path  # Store output path in session
+    return redirect(url_for('download'))
+
+@app.route('/download')
+def download():
+    output_pdf_path = session.get('output_pdf_path')
+    if output_pdf_path:
+        return render_template('download.html', output_pdf_path=output_pdf_path)
+    return redirect(url_for('index'))
+
+@app.route('/download_file')
+def download_file():
+    output_pdf_path = session.get('output_pdf_path')
+    if output_pdf_path:
+        return send_file(output_pdf_path, as_attachment=True)
+    return redirect(url_for('index'))
 
 def convert_images_to_pdf(image_paths, output_pdf_path):
     pdf = canvas.Canvas(output_pdf_path, pagesize=(612, 792))
