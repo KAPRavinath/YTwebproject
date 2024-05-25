@@ -24,4 +24,22 @@
     </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Your PDF is Ready!</h1>
+        <div class="text-center">
+            <a href="{{ url_for('download_file') }}" class="btn btn-primary">Download PDF</a>
+        </div>
+    </div>
+</body>
+</html>
 

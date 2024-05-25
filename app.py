@@ -5,7 +5,7 @@ from PIL import Image
 import os
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Required for session handling
+app.secret_key = 'supersecretkey'  # Change this to a strong secret key
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['OUTPUT_FOLDER'] = 'outputs'
 
