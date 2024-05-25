@@ -3,64 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AliExpress-Like Marketplace</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your external stylesheet -->
-    <style>
-        /* Additional inline styles can be added here if needed */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        /* Add more styles as needed */
-    </style>
+    <title>Image to PDF Converter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <div class="logo">
-                <img src="C:\Users\Prasanga\Desktop\My_Project_AWS\YTwebproject\aliexpress-logo.png" alt="KAP Ravinath">
+    <div class="container mt-5">
+        <h1 class="text-center">Image to PDF Converter</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="images">Select Images:</label>
+                <input type="file" class="form-control" id="images" name="images" multiple required>
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for products...">
-                <button>Search</button>
+            <div class="form-group">
+                <label for="output_pdf_name">Enter Output PDF Name:</label>
+                <input type="text" class="form-control" id="output_pdf_name" name="output_pdf_name" required>
             </div>
-            <div class="user-options">
-                <a href="#">Sign In</a> / <a href="#">Join</a>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="#">Flash Sales</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    </header>
-    <div class="container">
-        <!-- Content of the marketplace -->
-        <h2>Welcome to KAP Ravinath-Like Marketplace!</h2>
-        <p>Discover millions of quality products at unbeatable prices.</p>
-        <div class="products">
-            <!-- Product listings will go here -->
-            <div class="product">
-                <img src="product1.jpg" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>Description of Product 1</p>
-                <p>$XX.XX</p>
-                <button>Add to Cart</button>
-            </div>
-            <!-- Add more products as needed -->
-        </div>
+            <button type="submit" class="btn btn-primary">Convert to PDF</button>
+        </form>
     </div>
-    <footer>
-        <!-- Footer content -->
-        <p>&copy; 2024 AliExpress-Like Marketplace. All rights reserved.</p>
-    </footer>
 </body>
 </html>
