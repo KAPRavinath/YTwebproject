@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image to PDF Converter</title>
+    <title>Image to PDF Converter and Login System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .login-container {
+            background-color: white;
+            width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .login-container h1 {
+            font-family: Impact, sans-serif;
+            color: #6162FF;
+            margin: 0;
+        }
+        .login-container h2 {
+            font-family: Impact, sans-serif;
+            color: #1d1d1d;
+            margin: 10px 0;
+        }
+        .login-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: gray;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #E7E6E6;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .login-container .forgot {
+            color: green;
+            background-color: white;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .login-container .login-btn {
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -22,18 +87,33 @@
             <button type="submit" class="btn btn-primary">Convert to PDF</button>
         </form>
     </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download PDF</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-</head>
-<body>
+
+    <div class="login-container">
+        <h1>Login Here</h1>
+        <h2>Members Login Area</h2>
+        <label for="username">User Name</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <button class="forgot">Forgot</button>
+        <button class="login-btn" onclick="checkFunction()">LOGIN</button>
+    </div>
+
+    <script>
+        function checkFunction() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('All fields are required');
+            } else if (username !== 'KAPRavinath' || password !== '19920501') {
+                alert('Invalid Username or Password');
+            } else {
+                alert(`Welcome ${username}`);
+            }
+        }
+    </script>
+
     <div class="container mt-5">
         <h1 class="text-center">Your PDF is Ready!</h1>
         <div class="text-center">
@@ -42,4 +122,3 @@
     </div>
 </body>
 </html>
-
